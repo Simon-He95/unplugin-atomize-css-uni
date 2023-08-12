@@ -21,7 +21,7 @@ export function vitePluginTailwindUni(options: Record<string, string> = {}) {
           return `class="${data}"`
         })
       }
-      else if (id.endsWith('styles/index.css')) {
+      else if (id.endsWith('.css')) {
         return Object.keys(tailwindMap).reduce((result, key) => {
           const value = tailwindMap[key]
           return result.replaceAll(`\\${key}`, value)
