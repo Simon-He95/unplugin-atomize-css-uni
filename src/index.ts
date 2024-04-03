@@ -1,5 +1,7 @@
+import { createUnplugin } from 'unplugin'
+
 // 兼容微信小程序不支持!、\/[^\/]*\/
-export function vitePluginTailwindUni(options: Record<string, string> = {}) {
+export const unplugin = createUnplugin((options: Record<string, string> = {}) => {
   const tailwindMap: Record<string, string> = Object.assign({
     '[': '__brackets__',
     ']': '__brackets__',
@@ -31,4 +33,10 @@ export function vitePluginTailwindUni(options: Record<string, string> = {}) {
     },
 
   }
-}
+})
+
+export const vitePlugin = unplugin.vite
+export const rollupPlugin = unplugin.rollup
+export const webpackPlugin = unplugin.webpack
+export const rspackPlugin = unplugin.rspack
+export const esbuildPlugin = unplugin.esbuild

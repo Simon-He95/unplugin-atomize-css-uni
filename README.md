@@ -1,19 +1,19 @@
-## vite-plugin-tailwind-uni
-此插件为了解决uniapp中使用tailwindcss，遇到tailwindcss语法编译到微信小程序wxss，不支持`\[`、`\]`、`#`、`:`、`%`的问题,会将这些不能被wxss识别的class🥱转换成以下的形式
+## unplugin-atomize-css-uni
+此插件为了解决 `uniapp` 中使用 `TailwindCSS` 或 `UnoCSS`，遇到原子化 css 语法编译到微信小程序 `wxss`，不支持`\[`、`\]`、`#`、`:`、`%`的问题,会将这些不能被 `wxss` 识别的 `class` 转换成以下的形式
 
 ## 🌈 Options
 - 可以传入Options去覆盖原本的class名，或增加新的不能被识别需要被转换的符号
 
 ## 🧰 使用
 ```typescript
-import { vitePluginTailwindUni } from 'vite-plugin-tailwind-uni'
+import { vitePlugin as vitePluginAtomizeCssUni } from 'unplugin-atomize-css-uni'
 plugins:[
-  vitePluginTailwindUni(options)
+  vitePluginAtomizeCssUni(options)
 ]
 ```
 
 ## ⚠️ 注意
-- 此插件只支持在uniapp+vite中使用，只针对.vue文件和.css文件做转换
+- 只针对.vue文件和.css文件做转换
 
 ```typescript
 const tailwindMap: Record<string, string> = {
